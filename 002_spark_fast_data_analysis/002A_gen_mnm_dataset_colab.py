@@ -1,21 +1,16 @@
-import sys
 import random
 import csv
 
 def get_random_choice(lst):
-  return random.choice(lst)
+    return random.choice(lst)
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: gen_mnm_dataset entries", file=sys.stderr)
-        sys.exit(-1)
+    entries = 100000
 
     states = ["CA", "WA", "TX", "NV", "CO", "OR", "AZ", "WY", "NM", "UT"]
     colors = ["Brown", "Blue", "Orange", "Yellow", "Green", "Red"]
     fieldnames = ['State', 'Color', 'Count']
 
-
-    entries = int(sys.argv[1]) # python3 002A_gen_mnm_dataset.py 100.000
     dataset_fn = "mnm_dataset.csv"
 
     with open(dataset_fn, mode='w') as dataset_file:
